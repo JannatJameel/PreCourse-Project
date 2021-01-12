@@ -38,11 +38,9 @@ const sumOdds= (numbers) => {
  * Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  const characters = string.split("");
   let count = 0;
-  for (character of characters) {
-    if (character.toLowerCase() === "c")
-      count+=1;
+  for (const character of string) {
+    if (character.toLowerCase() === c) count++;
   }
   return count;
 }
@@ -65,7 +63,7 @@ function characterCount(string, c) {
 function differences(numbers) {
   let difference = [];
   const elements = numbers.length - 1;
-  for (let i=0; i<elements;i+=1){
+  for (let i=0; i<elements;i++){
     difference.push(numbers[i+1] - numbers[i]);
   }
   return difference;
@@ -87,13 +85,15 @@ function differences(numbers) {
  *
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
+// function largestIncrement(numbers) {
+//   let largest = 0;
+//   for (difference of differences(numbers)){
+//     if (difference > largest) largest = difference;
+//   }
+//   return largest;
+// }
 function largestIncrement(numbers) {
-  let largest = 0;
-  for (difference of differences(numbers)){
-    if (difference > largest) largest = difference;
-  }
-  return largest;
-}
+  return Math.max(...differences(numbers));
 
 /**
  * afterX(numbers, x):
@@ -107,7 +107,8 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  return numbers.slice(x,-1);
+  numbers.findIndex((element) => element === x);
+  return numbers.slice(index+1);
 }
 
 /**
@@ -177,7 +178,7 @@ function reverseString(string) {
 // console.log(abbreviate("miss", "Stephane"));
 // console.log(isUpperCase("JCREW"));
 // console.log(elementInArray([5, 6, 7], 5));
-console.log(reverseString("CODED"));
+// console.log(reverseString("CODED"));
 
 module.exports = {
   sumOdds,
