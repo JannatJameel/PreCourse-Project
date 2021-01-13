@@ -37,8 +37,8 @@ function noZeroes(numberString) {
   return numberString;
 }
 
-// console.log(generateIntegersArray(3, 7));
-// console.log(noZeroes("00110000"));
+console.log(generateIntegersArray(3, 7));
+console.log(noZeroes("00110000"));
 module.exports = {
   generateIntegersArray,
   noZeroes,

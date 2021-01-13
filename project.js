@@ -18,10 +18,17 @@
  * sumOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]) -> 25
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
+// const sumOdds= (numbers) => {
+//   total = 0;
+//   const oddNums = numbers.filter((number) => number % 2 !== 0);
+//   for (number of oddNums) total+=number;
+//   return total;
+// }
 const sumOdds= (numbers) => {
-  const oddNums = numbers.filter((number) => number % 2 !== 0);
   total = 0;
-  for (number of oddNums) total+=number;
+  numbers.filter((number) => {
+    if (number % 2 !== 0) total += number;
+    });
   return total;
 }
 
@@ -68,7 +75,9 @@ function differences(numbers) {
   }
   return difference;
 }
+function differences(numbers) {
 
+}
 /**
  * largestIncrement(numbers):
  * - receives an array of numbers
